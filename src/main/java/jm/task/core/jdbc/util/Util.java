@@ -25,6 +25,8 @@ public class Util {
                 e.printStackTrace();
                 System.out.println("Connection FAILED");
             }
+        }else {
+            System.out.println("Repeat same connection");
         }
         return connection;
     }
