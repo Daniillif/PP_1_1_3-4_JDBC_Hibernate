@@ -26,8 +26,16 @@ public class Util {
                 System.out.println("Connection FAILED");
             }
         }else {
-            System.out.println("Repeat same connection");
+            System.out.println("Connection complete");
         }
         return connection;
+    }
+    public static void closeConnection(){
+        try{
+            connection.close();
+            System.out.println("Connection closed,WELL DONE!");
+        } catch (SQLException e) {
+            System.out.println("Connection not closed");;
+        }
     }
 }
