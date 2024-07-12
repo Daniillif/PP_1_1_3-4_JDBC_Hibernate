@@ -17,8 +17,6 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() {
         try {
             String sql = """
-                USE user;
-                \s
                 CREATE TABLE IF NOT Exists Users
                 (
                     Id INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,9 +49,11 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.setByte(3,age);
             preparedStatement.executeUpdate();
             System.out.printf("User с именем — %s добавлен в базу данных",name);
+            System.out.println();
 
         } catch (SQLException e) {
             System.out.println("Ошибка в методе saveUser класса UserDaoJDBCImpl");
+
         }
     }
 
