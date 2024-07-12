@@ -11,7 +11,6 @@ import java.sql.Connection;
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        Connection connection = Util.getConnection();
         //Создание таблицы User(ов)
         // Добавление 4 User(ов) в таблицу с данными на свой выбор. После каждого добавления должен быть вывод в консоль (User с именем — name добавлен в базу данных)
         // Получение всех User из базы и вывод в консоль (должен быть переопределен toString в классе User)

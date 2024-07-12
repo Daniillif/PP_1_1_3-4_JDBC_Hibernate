@@ -27,7 +27,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     Age TINYINT
                 );""";
         try {
-            preparedStatement = connection.prepareStatement(sql);
+            connection.prepareStatement(sql).execute();
         } catch (SQLException e) {
             System.out.println("Ошибка в методе createUsersTable класса UserDaoJDBCImpl");
         }
@@ -35,9 +35,9 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void dropUsersTable() {
         PreparedStatement preparedStatement = null;
-        String sql = "DROP TABLE user.Users;";
+        String sql = "DROP TABLE IF EXISTS Users;";
         try {
-            preparedStatement = connection.prepareStatement(sql);
+            connection.prepareStatement(sql).execute();
         } catch (SQLException e) {
             System.out.println("Ошибка в методе dropUsersTable класса UserDaoJDBCImpl");
         }
@@ -95,7 +95,7 @@ public class UserDaoJDBCImpl implements UserDao {
         PreparedStatement preparedStatement = null;
         String sql = "TRUNCATE TABLE Users;";
         try {
-            preparedStatement = connection.prepareStatement(sql);
+            connection.prepareStatement(sql).execute();
         } catch (SQLException e) {
             System.out.println("Ошибка в методе dropUsersTable класса UserDaoJDBCImpl");
         }
